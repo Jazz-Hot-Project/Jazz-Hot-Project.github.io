@@ -1,2 +1,2 @@
-# Jazz-Hot-Project.github.io-
+# Jazz-Hot-Project.github.io
 site vitrine + carto
