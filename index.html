@@ -151,53 +151,63 @@ table.db tr:hover td{background:#f6f8fa}
 <div class="stat-row" id="aboutStats"></div>
 
 <h2>Introduction</h2>
-<p>L'Europe constitue, selon les termes de Joël Pailhé, l'un des pôles d'un « oligopole mondial du jazz » aux côtés des États-Unis et du Japon (Pailhé, 1998). L'arrivée massive de musiciens américains à Paris à partir de 1969 (Sunny Murray, Anthony Braxton, l'Art Ensemble of Chicago, Alan Silva, Frank Wright...) répond à des logiques économiques liées au déclin du marché américain, mais prolonge aussi une tradition d'accueil des artistes afro-américains remontant à l'entre-deux-guerres (Drott, 2008).</p>
-<p>La presse jazz est une ressource précieuse où programmes de concerts, rubriques d'actualité et critiques nous renseignent sur les dates, les lieux et les artistes qui se produisent sur le continent. La source principale est la revue <em>Jazz Hot</em>, fondée en 1935, qui occupe une position centrale dans le champ français du jazz (Roueff, 2019). Notre démarche consiste à extraire systématiquement les mentions de performances scéniques, à géolocaliser les lieux de concert, puis à reconstituer les trajets entre destinations.</p>
+<p>L'Europe constitue, selon les termes de Joël Pailhé, l'un des pôles d'un « oligopole mondial du jazz » aux côtés des États-Unis et du Japon (Pailhé, 1998). L'arrivée massive de musiciens américains à Paris à partir de 1969 répond à des logiques économiques liées au déclin du marché américain, mais prolonge aussi une tradition d'accueil des artistes afro-américains remontant à l'entre-deux-guerres (Drott, 2008). Pourtant, les déplacements de musiciens en Europe restent mal documentés.</p>
+<p>La presse jazz est une ressource précieuse où programmes de concerts, rubriques d'actualité et critiques renseignent sur les dates, les lieux et les artistes qui se produisent sur le continent. Ces périodiques constituent des index partiels des mouvements d'artistes et témoignent de la dynamique du paysage jazzistique. La source principale est la revue <em>Jazz Hot</em>, fondée en 1935, qui occupe une position centrale dans le champ français du jazz (Roueff, 2019). Notre démarche consiste à extraire systématiquement les mentions de performances scéniques, à géolocaliser les lieux de concert, puis à reconstituer les trajets entre destinations pour faire apparaître les circuits de diffusion.</p>
 
 <h2>État de l'art</h2>
-<p>Les recherches existantes sur la diaspora jazz en Europe proposent surtout des études de cas individuels ou prosopographiques (Clark, 2017 ; Ross, 2000 ; Braggs, 2016), sinon sur la réception critique du free (Roueff, 2019 ; Sklower, 2008). Ces travaux pourraient bénéficier d'analyses quantitatives. Un premier pas se trouve chez Joël Pailhé, qui établit un indice de diffusion du jazz en Europe (Pailhé, 1998).</p>
-<p>Plusieurs projets de cartographie numérique ont ouvert la voie : <em>Free Jazz NYC</em> (lieux du free jazz à Manhattan), <em>Jazz Venues</em> (clubs parisiens des années 1920), <em>The Travels of Josephine Baker and Sidney Bechet</em> (cartographie d'itinéraires). Toutefois, aucun n'a étudié des périodiques en masse grâce à des outils HTR. Nous nous tournons plutôt vers le projet BasArt comme référence (de Maupeou, 2012).</p>
+<p>Les recherches existantes sur la diffusion du jazz en Europe proposent surtout des études de cas individuels ou prosopographiques (Clark, 2017 ; Ross, 2000 ; Braggs, 2016), ou sur sa réception critique (Roueff, 2019 ; Sklower, 2008) et sa politisation (Drott, 2008 ; Le Texier, 2018). Si ces travaux fournissent un cadre indispensable, ils pourraient bénéficier d'analyses quantitatives. Un premier pas se trouve chez Joël Pailhé, qui établit un indice de diffusion du jazz en Europe à partir du cumul de radios, revues, festivals et musiciens recensés par pays (Pailhé, 1998).</p>
+<p>Plusieurs projets de cartographie numérique ont ouvert la voie : <em>Free Jazz NYC</em> (lieux du free jazz à Manhattan), <em>Jazz Venues</em> (clubs parisiens des années 1920), <em>The Travels of Josephine Baker and Sidney Bechet</em> (cartographie d'itinéraires). Toutefois, ces projets restent limités dans leurs corpus et aucun n'a étudié des périodiques en masse grâce à des outils HTR. Nous nous tournons plutôt vers le projet BasArt comme référence en matière de base de données interactive sur la circulation d'artistes à partir d'imprimés (de Maupeou, 2012).</p>
 
 <h2>Entraînement du modèle OCR</h2>
-<p>Le corpus se compose de 91 numéros de <em>Jazz Hot</em> (1966–1976), soit 404 vues. Un échantillon de 55 pages a été sélectionné pour l'entraînement. Les pages ont été segmentées via FoNDUE (eScriptorium, Kraken v5.3.0) selon les préconisations SegmOnto (Gabay, 2024). Les données ont été prétranscrites par CATMuS <em>Print</em> [large] puis affinées par <em>fine-tuning</em>. Le modèle CATMuS <em>Jazz Hot</em> atteint 98.73% d'exactitude par caractère contre 98.03% pour CATMuS <em>Print</em> [large].</p>
+<p>Le corpus se compose de 91 numéros de <em>Jazz Hot</em> (1966–1976), soit 404 vues. Le manque d'intérêt pour la numérisation de la presse jazz et le statut juridique de la revue, soumise au droit d'auteur, ont conduit à constituer le corpus à partir d'une collection personnelle. Un échantillon de 55 pages a été sélectionné pour l'entraînement, avec un déséquilibre justifié par la variation typographique selon les numéros (1968–1969 davantage représentés en raison de changements de mise en page plus fréquents).</p>
+<p>Les pages ont été segmentées via FoNDUE (eScriptorium, Kraken v5.3.0) selon les préconisations SegmOnto (Gabay, 2024). Les données ont été prétranscrites par CATMuS <em>Print</em> [large] puis affinées par <em>fine-tuning</em> pour corriger les confusions fréquentes entre ‹l›, ‹j› et ‹i›. Le modèle CATMuS <em>Jazz Hot</em> atteint 98,73 % d'exactitude par caractère contre 98,03 % pour CATMuS <em>Print</em> [large].</p>
 
 <h2>Méthode</h2>
-<p>L'extraction s'appuie sur des expressions régulières adaptées à la structure des encarts de concerts dans les fichiers XML-ALTO, les outils NER ayant été jugés trop peu performants sur ce corpus. Cette méthode a permis d'extraire le nom de l'artiste, le lieu de performance, la ville, et l'adresse complète si mentionnée.</p>
+<p>Les outils de reconnaissance d'entités nommées ayant été jugés trop peu performants sur ce corpus (Ortiz Suárez <em>et al.</em>, 2020), l'extraction s'appuie sur des expressions régulières adaptées à la structure des encarts de concerts dans les fichiers XML-ALTO. Cette méthode a permis de relever systématiquement le nom de l'artiste, le lieu de performance, la ville et la date. Un travail de vérification manuelle a ensuite corrigé les faux positifs et enrichi la base par l'identification des musiciens associés au free jazz.</p>
+<p>La base de données comprend 10 364 entrées réparties entre 3 593 artistes et 372 villes uniques, selon une structure événementielle. Les villes ont été réconciliées avec Wikidata pour le géoréférencement, à peine 30 % des entrées comportant une adresse complète. La contrepartie est une perte de granularité spatiale, surtout pour Paris intra-muros où la diversité des clubs se trouve ramenée à un point unique.</p>
 
 <h2>Chaîne de traitement</h2>
 <div id="pipelineSteps"></div>
 
 <h2>Discussion</h2>
 <h3>Routes</h3>
-<p>Un axe transatlantique saillant entre Paris et New York poursuit une tradition déjà ancienne. La centralité de Paris est nuancée par les festivals d'été à Montreux, Nice et Antibes/Juan-les-Pins. Ce circuit profite d'abord aux artistes établis (Dizzy Gillespie, Joe Turner, Memphis Slim...) qui parcourent l'Europe forts de leur succès commercial. Pour les musiciens émergents, ces festivals représentent un enjeu de visibilité (Picaud, 2017).</p>
+<p>Un axe transatlantique saillant entre Paris et New York affirme un canal déjà ancien. La centralité de Paris est nuancée par l'importance des festivals d'été à Montreux, Nice et Antibes/Juan-les-Pins, qui forment le réseau principal avec la capitale. Ce circuit profite d'abord aux artistes établis (Dizzy Gillespie, Clark Terry, Charles Mingus…) parcourant l'Europe forts de leur succès des décennies précédentes. Le modèle du festival international de jazz, apparu en France dès les années 1940, repose d'abord sur l'invitation de joueurs américains de renom (McKay, 2018). En parallèle, le déclin de la demande américaine conduit un nombre croissant de musiciens à s'installer en France — Sunny Murray, Marion Brown, Steve Lacy, Noah Howard, Frank Wright —, attirés par une meilleure réception de leur musique (Drott, 2008). Festivals et scène parisienne fonctionnent ainsi comme des pôles à la fois économiques et symboliques de visibilité et de reconnaissance (Picaud, 2017).</p>
 <h3>Villes</h3>
-<p>L'affluence résulte de mouvements interdépendants liés à l'économie de la tournée et aux opportunités qu'offre le marché européen. Les festivals et la scène parisienne deviennent des pôles à la fois économiques et symboliques (Picaud, 2017).</p>
+<p>Les flux de jazzmen résultent avant tout de l'économie de la tournée et des opportunités qu'offre le marché européen. Les festivals et la scène parisienne deviennent des espaces de rencontres professionnelles offrant aux artistes la possibilité de rejoindre une formation, de toucher un public plus large (McKay, 2018) ou de décrocher un contrat d'enregistrement (Drott, 2008).</p>
 <h3>Free Jazz</h3>
-<p>Le circuit du free jazz présente un profil distinct. Plus modeste, il relève d'une économie de niche et se déploie en banlieue et en province autour de lieux dédiés comme Willisau, Saint-Fons ou l'American Center de Paris. La présence américaine est minoritaire. Un style <em>free</em> européen s'affirme dès les années 1970 (Cotro, 1995). Des écosystèmes culturels se sont constitués pour cultiver ces musiques dans des espaces locaux, et une communauté d'expatriés (Frank Wright, Noah Howard, Steve Lacy) se déplace selon la demande.</p>
+<p>Le circuit du free jazz présente un profil distinct. Il ne recoupe qu'en partie le réseau principal et se déploie davantage en banlieue et en province autour de lieux dédiés comme Willisau, Saint-Fons ou l'American Center de Paris. En dépit de sa marginalité, il est documenté sur l'ensemble du territoire français, dessinant un réseau alternatif au circuit classique. Cette répartition est tributaire de la ligne éditoriale de <em>Jazz Hot</em> : au tournant des années 1960, une nouvelle génération de critiques embrasse le free jazz dans sa dimension contestataire et lui attribue des valeurs militantes en accord avec la pensée anticoloniale de mai 68 (Drott, 2008), contestant les centres et valorisant les périphéries (Roueff, 2019).</p>
+<p>La présence américaine est minoritaire sur ce circuit (environ 20 %), et les artistes les plus actifs (Cecil Taylor, Sun Ra) avaient pour la plupart déjà connu un succès à New York. Ces cartes semblent plutôt témoigner de l'affirmation d'une scène européenne de musique improvisée : un goût esthétique et idéologique s'est développé, et des écosystèmes culturels se sont constitués pour cultiver ces musiques dans des espaces locaux (événements militants, petits festivals, salles communales, MJC…) et pour inviter les précurseurs et expatriés américains. Ce processus passe, selon Sklower (2006), par une découverte esthétique au début des années 1960, une politisation au tournant des années 1970, puis un détachement progressif de la culture afro-américaine dans la décennie suivante.</p>
 
 <h2>Pistes</h2>
-<p>La chaîne de traitement s'avère fonctionnelle mais reste perfectible. Il conviendrait de compléter les sources avec plus de revues et d'élargir le champ à l'échelle européenne. L'ambition serait de développer une application interactive et de mener une interrogation plus fine : quels artistes jouent quelles musiques, dans quels espaces ?</p>
+<p>La chaîne de traitement s'avère fonctionnelle mais reste perfectible, surtout au niveau de la segmentation des images et de l'automatisation de l'extraction. Il conviendrait de compléter les sources en intégrant davantage de revues et d'élargir le corpus à l'échelle européenne. L'application gagnerait à être enrichie d'une <em>timeline</em> permettant de dégager des dynamiques d'évolution plus fines : quels artistes jouent quelles musiques, dans quels espaces, et dans quelle mesure cela participe-t-il à la diffusion et à la réception de cette pratique ?</p>
 
 <h2>Données et code</h2>
 <p>Application : <a href="https://jazz-hot-project.github.io/">jazz-hot-project.github.io</a></p>
-<p>Github : <a href="https://github.com/Jazz-Hot-Project/JH-Training-Data/releases/tag/HTR-training-dataset">JH-Training-Data</a></p>
+<p>Github : <a href="https://github.com/Jazz-Hot-Project">Jazz-Hot-Project</a></p>
 <p>Zenodo : <a href="https://zenodo.org/records/18865177">zenodo.org/records/18865177</a></p>
 
-<h2>Références</h2>
+<h2>Bibliographie</h2>
 <div class="ref">
-<p>Braggs, R. (2016). <em>Jazz Diasporas</em>.</p>
-<p>Clark, A. (2017). <em>Making Jazz French</em>.</p>
-<p>Cotro, V. (1995). <em>Recherches sur le free jazz en France</em>.</p>
-<p>de Maupeou, F. (2012). BasArt / ARTL@S.</p>
-<p>Drott, E. (2008). Free Jazz and the French Critic. <em>JAMS</em>, 61(3).</p>
-<p>Gabay, S. (2024). SegmOnto, CATMuS-Print.</p>
-<p>Pailhé, J. (1998). Le jazz, un oligopole mondial. <em>Mappemonde</em>, 51.</p>
-<p>Picaud, M. (2017). Comment les intermédiaires culturels valorisent-ils le jazz ?</p>
-<p>Ross, K. (2000). <em>Jazz and the European Imagination</em>.</p>
-<p>Roueff, O. (2019). <em>L'espace du jazz en France</em>.</p>
-<p>Sklower, J. (2008). <em>Rebel Music</em>.</p>
+<p>Braggs, R. K. (2016). <em>Jazz Diasporas: Race, Music, and Migration in Post-World War II Paris</em>. University of California Press. <a href="https://www.jstor.org/stable/10.1525/j.ctt19632jr" target="_blank">jstor.org</a></p>
+<p>Clark, B. J. (2017). <em>Making Bread Abroad: A Prosopographical Survey of American Jazz Musicians in Europe, 1945-1990</em> [Thesis]. <a href="https://minds.wisconsin.edu/handle/1793/76918" target="_blank">minds.wisconsin.edu</a></p>
+<p>de Maupeou, F. et Saint-Raymond, L. (2012). Cartographie des lieux d'exposition à Paris, de 1850 à nos jours. <em>Artl@s Bulletin</em>, 1(1). <a href="https://docs.lib.purdue.edu/artlas/vol1/iss1/4" target="_blank">docs.lib.purdue.edu</a></p>
+<p>Dorin, S. (2016). Editorial: The global circulations of jazz. <em>Jazz Research Journal</em>, 10(1-2), 5–12. <a href="https://journal.equinoxpub.com/JAZZ/article/view/12284" target="_blank">doi:10.1558/jazz.v10i1-2.29354</a></p>
+<p>Drott, E. (2008). Free Jazz and the French Critic. <em>Journal of the American Musicological Society</em>, 61(3), 541–581. <a href="https://doi.org/10.1525/jm.2008.61.3.541" target="_blank">doi:10.1525/jm.2008.61.3.541</a></p>
+<p>Gabay, S. et Clérice, T. (2024). CATMuS-Print [Large]. Zenodo. <a href="https://zenodo.org/records/10592716" target="_blank">zenodo.org</a></p>
+<p>Gabay, S., Pinche, A., Christensen, K. et Camps, J.-B. (2024). SegmOnto: A Controlled Vocabulary to Describe and Process Digital Facsimiles. <em>Journal of Data Mining and Digital Humanities</em>. <a href="https://hal.science/hal-04343404" target="_blank">doi:10.46298/jdmdh.12689</a></p>
+<p>Gauffroy-Naudin, T. (2024). FONDUE-JAZZHOT — Training data for French Jazz Magazine "Jazz Hot" program section 1966-1976. <a href="https://github.com/truckthomas/FONDUE-JAZZHOT-20TH-PRINT-ZINE" target="_blank">github.com</a></p>
+<p>Gauffroy-Naudin, T. et Gabay, S. (2026). CATMuS-JH. Zenodo. <a href="https://zenodo.org/records/18865177" target="_blank">doi:10.5281/zenodo.18865177</a></p>
+<p>Le Texier, L. (2018). La critique parisienne et la légitimation du free jazz. Vers une politisation du commentaire esthétique (1959-1965). <em>Marges. Revue d'art contemporain</em>, 26, 34–43. <a href="https://journals.openedition.org/marges/1366" target="_blank">doi:10.4000/marges.1366</a></p>
+<p>McKay, G. (2018). Festivals. Dans F. Martinelli (dir.), <em>The History of European Jazz</em> (p. 707–718). Equinox Publishing. <a href="https://www.equinoxpub.com/home/jazz-over-europe-francesco-martinelli/" target="_blank">doi:10.1558/equinox.33267</a></p>
+<p>Ortiz Suárez, P. J., Dupont, Y., Muller, B., Romary, L. et Sagot, B. (2020). Establishing a New State-of-the-Art for French Named Entity Recognition. <em>Proceedings of LREC 2020</em>, 4631–4638. <a href="https://aclanthology.org/2020.lrec-1.569/" target="_blank">aclanthology.org</a></p>
+<p>Pailhé, J. (1998). Le jazz, mondialisation et territorialité. <em>Mappemonde</em>, 51. <a href="https://doi.org/10.3406/mappe.1998.1405" target="_blank">doi:10.3406/mappe.1998.1405</a></p>
+<p>Picaud, M. (2017). Comment analyser les circulations internationales d'artistes ? Le cas des salles de musique à Paris. Dans J.-B. Comby (dir.), <em>Enquêter sur l'internationalisation des biens culturels et médiatiques</em> (p. 77–101). PUR. <a href="https://shs.hal.science/halshs-01809593" target="_blank">hal.science</a></p>
+<p>Ross, L. (2000). Jazz musicians in the diaspora. <a href="https://elibrary.ru/item.asp?id=5352823" target="_blank">elibrary.ru</a></p>
+<p>Roueff, O. (2019). L'espace des possibles avant-gardistes. Le free jazz à Paris, 1958-1968. Dans I. Kirchberg et A. Robert (dir.), <em>Bourdieu et la musique. Enjeux et perspectives</em>. Delatour. <a href="https://shs.hal.science/halshs-02437259" target="_blank">hal.science</a></p>
+<p>Sklower, J. (2006). <em>Free jazz, la catastrophe féconde. Une histoire du monde éclaté du jazz en France (1960-1982)</em>. L'Harmattan.</p>
 </div></div>
 </div>
+
 
 <script>
 // ── DATA placeholder — replace with actual DATA object ──
@@ -324,3 +334,4 @@ showRoutes();
 </script>
 </body>
 </html>
+
