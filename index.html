@@ -307,13 +307,11 @@ function initAbout(){
     <div class="step"><div class="sn">1</div><div class="sb"><div class="st">Numérisation & OCR</div>
       <div class="sd">Scans des numéros de <em>Jazz Hot</em> (1966–1976). Transcription via modèle HTR Kraken (CATMuS-JH) entraîné sur le corpus. Score d'exactitude par caractère : 98.73%.</div></div></div>
     <div class="step"><div class="sn">2</div><div class="sb"><div class="st">Extraction des données</div>
-      <div class="sd">Expressions régulières adaptées à la structure des encarts de concerts et de festivals dans les fichiers XML-ALTO : extraction du nom de l'artiste, du lieu de performance, de la ville et de l'adresse.</div></div></div>
+      <div class="sd">Expressions régulières adaptées à la structure des encarts de concerts et de festivals dans les fichiers : extraction du nom de l'artiste, du lieu de performance, de la ville et de l'adresse.</div></div></div>
     <div class="step"><div class="sn">3</div><div class="sb"><div class="st">Normalisation & enrichissement</div>
-      <div class="sd">Géocodage (Nominatim), identifiants Wikidata, classification par genre (free jazz, hard bop, swing…), marqueur de nationalité / statut expatrié.</div></div></div>
-    <div class="step"><div class="sn">4</div><div class="sb"><div class="st">Nettoyage & validation</div>
-      <div class="sd">Vérification manuelle des cas ambigus, correction des coordonnées, harmonisation des noms d'artistes et de salles.</div></div></div>
-    <div class="step"><div class="sn">5</div><div class="sb"><div class="st">Visualisation cartographique</div>
-      <div class="sd">Cartes Leaflet (villes, routes, proportion free jazz). Agrégation par ville, calcul des circulations artiste par artiste, palettes Plasma et personnalisées.</div></div></div>`}
+      <div class="sd">Vérification manuelle des cas ambigus, géocodage via identifiants Wikidata, identification free jazz.</div></div></div>
+    <div class="step"><div class="sn">4</div><div class="sb"><div class="st">Visualisation cartographique</div>
+      <div class="sd">Cartes Leaflet (villes, routes, proportion free jazz).</div></div></div>`}
 
 // VIEW SWITCHING — default to Routes
 const MV={villes:showVilles,routes:showRoutes,freejazz:showFJ};
